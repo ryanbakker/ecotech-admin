@@ -3727,6 +3727,13 @@ react-spinners@^0.13.8:
   resolved "https://registry.yarnpkg.com/react-spinners/-/react-spinners-0.13.8.tgz#5262571be0f745d86bbd49a1e6b49f9f9cb19acc"
   integrity sha512-3e+k56lUkPj0vb5NDXPVFAOkPC//XyhKPJjvcGjyMNPWsBKpplfeyialP74G7H7+It7KzhtET+MvGqbKgAqpZA==
 
+react-sweetalert2@^0.5.2:
+  version "0.5.2"
+  resolved "https://registry.yarnpkg.com/react-sweetalert2/-/react-sweetalert2-0.5.2.tgz#83f60963669fd4ab9e193beb7f1c56a1a5934cd7"
+  integrity sha512-6BxyApbQT1prCG5KUBTkc3+64CWpKAJCjd0Bvv+pmwEGYI9QeaDoH/sP8NeM4cMZgEplFsq6B/8noHoF1w/nzA==
+  dependencies:
+    sweetalert2 "^11.3.5"
+
 react@18.2.0:
   version "18.2.0"
   resolved "https://registry.yarnpkg.com/react/-/react-18.2.0.tgz#555bd98592883255fa00de14f1151a917b5d77d5"
@@ -4231,6 +4238,11 @@ svg-tags@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/svg-tags/-/svg-tags-1.0.0.tgz#58f71cee3bd519b59d4b2a843b6c7de64ac04764"
   integrity sha512-ovssysQTa+luh7A5Weu3Rta6FJlFBBbInjOh722LIt6klpU2/HtdUbszju/G4devcvk8PGt7FCLv5wftu3THUA==
+
+sweetalert2@^11.3.5:
+  version "11.7.5"
+  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-11.7.5.tgz#d905b792cfcb69d5db479f839151ce12d8804a8e"
+  integrity sha512-RBPKdK8Uf9/bz9r4vy7x6sGqf0MioSXt1po1lAwwcl3AwbjHVTc5S0yud4ZJKU1EhvJFVDrFoqIpHwWERwZJEA==
 
 synckit@^0.8.5:
   version "0.8.5"

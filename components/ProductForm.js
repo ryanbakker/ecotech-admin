@@ -3,7 +3,7 @@ import axios from "axios";
 import { redirect } from "next/dist/server/api-utils";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Spinner from "./Spinner";
 import { ReactSortable } from "react-sortablejs";
 
@@ -13,18 +13,28 @@ export default function ProductForm({
   description: existingDescription,
   price: existingPrice,
   images: existingImages,
+  category: assignedCategory,
 }) {
   const [title, setTitle] = useState(existingTitle || "");
   const [description, setDescription] = useState(existingDescription || "");
+  const [category, setCategory] = useState(assignedCategory || "");
   const [price, setPrice] = useState(existingPrice || "");
   const [images, setImages] = useState(existingImages || []);
   const [goToProducts, setGoToProducts] = useState(false);
   const [isUploading, setIsUploading] = useState(false);
+  const [categories, setCategories] = useState([]);
   const router = useRouter();
+
+  // Get categories
+  useEffect(() => {
+    axios.get("/api/categories").then((result) => {
+      setCategories(result.data);
+    });
+  }, []);
 
   async function saveProduct(e) {
     e.preventDefault();
-    const data = { title, description, price, images };
+    const data = { title, description, price, images, category };
 
     // If we have an id, update the data, else create a new product
     if (_id) {
@@ -65,6 +75,7 @@ export default function ProductForm({
   return (
     <>
       <form onSubmit={saveProduct}>
+        {/* Product Name */}
         <label>Product name</label>
         <input
           type="text"
@@ -73,6 +84,23 @@ export default function ProductForm({
           onChange={(e) => setTitle(e.target.value)}
         />
 
+        {/* Product Category */}
+        <label>Category</label>
+        <select
+          value={category}
+          onChange={(e) => setCategory(e.target.value)}
+          className="bg-white"
+        >
+          <option value="">Select a category</option>
+          {categories.length > 0 &&
+            categories.map((c) => (
+              <option key={c._id} value={c._id}>
+                {c.name}
+              </option>
+            ))}
+        </select>
+
+        {/* Product Images */}
         <label>Images</label>
         <h5 className="m-0 mb-2 text-gray-500 text-xs">
           Drag images to change order
@@ -121,12 +149,15 @@ export default function ProductForm({
           </label>
         </div>
 
+        {/* Product Description */}
         <label>Description</label>
         <textarea
           placeholder="description"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
         ></textarea>
+
+        {/* Product Price */}
         <label>Price (NZD)</label>
         <input
           type="number"
@@ -134,6 +165,8 @@ export default function ProductForm({
           value={price}
           onChange={(e) => setPrice(e.target.value)}
         />
+
+        {/* Save Button */}
         <button type="submit" className="btn-primary mt-2">
           Save
         </button>
