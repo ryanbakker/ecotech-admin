@@ -36,11 +36,11 @@ table.basic thead tr td {
 }
 
 table.basic tr td {
-  @apply border border-blue-200 p-1;
+  @apply border border-blue-200 p-2;
 }
 
 table.basic a {
-  @apply text-white text-sm px-2 py-1 rounded-md inline-flex gap-1 mr-1 items-center;
+  @apply text-white text-sm px-2 py-1 rounded-md inline-flex gap-1 mr-2 items-center;
 }
 
 .btn-red,

@@ -14,14 +14,14 @@ export default function Products() {
 
   return (
     <Layout>
-      <Link href={"/products/new"} className="btn-primary">
+      <Link href={"/products/new"} className="!bg-primary btn-primary">
         Add new product
       </Link>
       <table className="basic mt-2">
         <thead>
-          <tr>
+          <tr className="font-medium">
             <td>Product name</td>
-            <td></td>
+            <td>Options</td>
           </tr>
         </thead>
         <tbody>
@@ -51,7 +51,7 @@ export default function Products() {
                 </Link>
                 <Link
                   href={"/products/delete/" + product._id}
-                  className="bg-red-800"
+                  className="bg-red-700"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
