@@ -20,7 +20,7 @@ export default function EditProductPage() {
   }, [id]);
 
   return (
-    <Layout>
+    <Layout className="!p-10">
       <h1>Edit Product</h1>
       {/* Show form if existing product info is loaded */}
       {/* Can add loading icon later */}

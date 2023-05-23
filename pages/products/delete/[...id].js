@@ -32,10 +32,13 @@ export default function DeleteProductPage() {
         Do you really want to delete &quot;{productInfo?.title}&quot;?
       </h1>
       <div className="flex gap-2 justify-center">
-        <button className="btn-default" onClick={goBack}>
+        <button
+          className="text-white bg-gray-600 px-4 py-1 rounded-sm inline-flex gap-1 mr-2 items-center"
+          onClick={goBack}
+        >
           Cancel
         </button>
-        <button className="btn-red" onClick={deleteProduct}>
+        <button className="table-btn-red !text-base" onClick={deleteProduct}>
           Delete
         </button>
       </div>

@@ -3,14 +3,13 @@
 @tailwind utilities;
 
 h1 {
-  @apply text-blue-900 mb-2 text-xl;
+  @apply text-gray-800 mb-4 text-xl;
 }
 
 input,
 textarea,
 select {
-  @apply border-2 border-gray-300 rounded-md px-1 w-full;
-  @apply mb-2;
+  @apply border-none rounded-sm px-2 w-full p-2 focus:outline-none mb-2 focus:border-none bg-gray-100 focus:bg-gray-200;
 }
 
 input:focus,
@@ -20,7 +19,7 @@ select:focus {
 }
 
 label {
-  @apply text-blue-900;
+  @apply text-primary text-sm;
 }
 
 .btn-primary {
@@ -32,15 +31,23 @@ table.basic {
 }
 
 table.basic thead tr td {
-  @apply bg-blue-100;
+  @apply text-sm text-gray-600 uppercase border-b border-gray-300;
 }
 
 table.basic tr td {
-  @apply border border-blue-200 p-2;
+  @apply p-2;
 }
 
 table.basic a {
-  @apply text-white text-sm px-2 py-1 rounded-md inline-flex gap-1 mr-2 items-center;
+  @apply text-white text-sm px-2 py-1 rounded-sm inline-flex gap-1 mr-2 items-center;
+}
+
+.table-btn-blue {
+  @apply !text-primary text-sm px-4 py-1 rounded-sm inline-flex gap-1 mr-2 items-center !bg-primary/30;
+}
+
+.table-btn-red {
+  @apply !text-red-700 text-sm px-4 py-1 rounded-sm inline-flex gap-1 mr-2 items-center !bg-red-200;
 }
 
 .btn-red,

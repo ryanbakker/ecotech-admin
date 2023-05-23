@@ -81,7 +81,8 @@ export default function Layout({ children }) {
       </div>
       <div className="flex">
         <Nav show={showNav} />
-        <div className="bg-white flex-grow mt-2 mr-2 mb-2 rounded-lg p-4 shadow-sm shadow-black/10">
+        {/* Content box */}
+        <div className="bg-white flex-grow mt-2 mr-2 mb-2 rounded-lg p-6 shadow-sm shadow-black/10">
           {children}
         </div>
       </div>

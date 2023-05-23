@@ -110,7 +110,7 @@ export default function ProductForm({
 
   return (
     <>
-      <form onSubmit={saveProduct}>
+      <form onSubmit={saveProduct} className="max-w-3xl">
         {/* Product Name */}
         <label>Product name</label>
         <input
@@ -122,11 +122,7 @@ export default function ProductForm({
 
         {/* Product Category */}
         <label>Category</label>
-        <select
-          value={category}
-          onChange={(e) => setCategory(e.target.value)}
-          className="bg-white"
-        >
+        <select value={category} onChange={(e) => setCategory(e.target.value)}>
           <option value="">Select a category</option>
           {categories.length > 0 &&
             categories.map((c) => (
@@ -139,8 +135,8 @@ export default function ProductForm({
         {/* Product Properties */}
         {propertiesToFill.length > 0 &&
           propertiesToFill.map((p) => (
-            <div key={p._id} className="flex gap-1">
-              <div>{p.name}</div>
+            <div key={p._id} className="flex flex-col gap-1">
+              <div className="text-primary text-sm capitalize">{p.name}</div>
               <select
                 value={productProperties[p.name]}
                 onChange={(ev) => setProductProp(p.name, ev.target.value)}
@@ -170,7 +166,7 @@ export default function ProductForm({
                 <div key={link} className="h-24">
                   <img
                     src={link}
-                    className="rounded-lg"
+                    className="rounded-sm"
                     alt={"image uploaded" + link}
                   />
                 </div>
@@ -183,7 +179,7 @@ export default function ProductForm({
             </div>
           )}
 
-          <label className="w-24 h-24 cursor-pointer text-center flex items-center justify-center text-sm gap-1 text-gray-600 rounded-lg bg-gray-200">
+          <label className="w-24 h-24 cursor-pointer text-center flex flex-col items-center justify-center text-sm gap-1 text-gray-600 rounded-sm bg-gray-100 hover:text-primary transition-colors duration-100">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -209,6 +205,7 @@ export default function ProductForm({
           placeholder="description"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
+          className="resize-none scroll-auto"
         ></textarea>
 
         {/* Product Price */}
@@ -221,7 +218,10 @@ export default function ProductForm({
         />
 
         {/* Save Button */}
-        <button type="submit" className="btn-primary mt-2">
+        <button
+          type="submit"
+          className="btn-primary mt-2 !bg-primary !rounded-sm"
+        >
           Save
         </button>
       </form>
